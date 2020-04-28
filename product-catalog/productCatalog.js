@@ -21,6 +21,8 @@ function updateTable(tableId, productArray) {
     while (tableBody.hasChildNodes()) {
         tableBody.removeChild(tableBody.firstChild);
     }
+    // console.log(this.parentNode.parentNode);
+
     //create table header
     createTableHeader(tableId);
     //populate table rows
@@ -31,6 +33,7 @@ function updateTable(tableId, productArray) {
         var td3 = document.createElement('TD');
         var td4 = document.createElement('TD');
         var btn = document.createElement('button');
+
 
         btn.addEventListener('click', function () {
             processSearch(this.parentNode.parentNode.firstChild.innerHTML);
@@ -67,7 +70,7 @@ function getIntersection(arrA, arrB, searchedId) {
                 similarArray.push(obj1);
         });
     });
-    
+
     return similarArray;
 
 }

@@ -61,7 +61,7 @@
             var promise = new Promise(function (resolve, reject) {
                 var i = 0;
                 var typeArray = [];
-                var possibleTypes = ['Electronics', 'Book', 'Clothing', 'Food'];
+                var possibleTypes = ['Eletronics', 'Book', 'Clothing', 'Food'];
                 if (!possibleTypes.includes(type)) {
                     reject("Invalid Type: " + type)
                 }
