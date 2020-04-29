@@ -87,10 +87,36 @@ function processSearch(searchId) {
     });
 }
 
+function processType(type) {
+    api.searchProductsByType(type).then(function (val) {
+        console.log(val);
+        updateTable('similarTable', val);
+    }).catch(function (val) {
+        alert(val);
+    });
+}
+
+function processPrice(price) {
+    api.searchProductsByPrice(price, 50).then(function (val) {
+        console.log(val);
+        updateTable('similarTable', val);
+    }).catch(function (val) {
+        alert(val);
+    });
+}
+
 api.searchAllProducts().then(function (value) {
     updateTable('allTable', value);
 });
 
-document.getElementById('inputButton').addEventListener('click', function () {
-    processSearch(document.getElementById('input').value);
+document.getElementById('searchId').addEventListener('click', function () {
+    processSearch(document.getElementById('inputId').value);
+});
+
+document.getElementById('searchType').addEventListener('click', function () {
+    processType(document.getElementById('inputType').value);
+});
+
+document.getElementById('searchPrice').addEventListener('click', function () {
+    processPrice(document.getElementById('inputPrice').value);
 });
